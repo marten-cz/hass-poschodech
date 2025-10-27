@@ -1,5 +1,6 @@
 {
   "name": "Poschodech Water",
   "domain": "poschodech_water",
-  "country": "ALL"
+  "country": "ALL",
+  "config_flow": true
 }

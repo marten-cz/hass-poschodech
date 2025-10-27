@@ -5,6 +5,7 @@ from typing import Any
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from poschodech_client.api import PoschodechApi
+from datetime import timedelta
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -22,3 +23,11 @@ class PoschodechCoordinator(DataUpdateCoordinator[list[dict]]):
     async def _async_update_data(self) -> list[dict]:
         data = await self.api.fetch_latest_for_flat(self.flat)
         return self.api.extract_records(data)
+
+
+def _get_flat_name(hass, entry):
+    return entry.options.get("flat_name") or entry.data["flat_name"]
+
+def _get_interval(entry):
+    hours = entry.options.get("update_interval_hours", 1)
+    return timedelta(hours=hours)
