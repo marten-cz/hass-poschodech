@@ -2,6 +2,7 @@
   "domain": "poschodech_water",
   "name": "Poschodech Water",
   "version": "2.0.0",
+  "config_flow": true,
   "documentation": "https://example.com/poschodech_water",
   "issue_tracker": "https://example.com/poschodech_water/issues",
   "codeowners": ["@yourgithub"],
