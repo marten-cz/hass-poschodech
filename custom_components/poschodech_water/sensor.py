@@ -7,7 +7,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.config_entries import ConfigEntry
 from .const import DOMAIN
 from .coordinator import PoschodechCoordinator
-from poschodech_client.api import PoschodechApi
+from .poschodech_client.api import PoschodechApi
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback) -> None:
     data = hass.data[DOMAIN][entry.entry_id]

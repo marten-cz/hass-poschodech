@@ -9,7 +9,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
-from poschodech_client.api import PoschodechApi
+from poschodech_water.poschodech_client.api import PoschodechApi
 
 async def main():
     ap = argparse.ArgumentParser(description="Probe Poschodech daily readings (per-record sensors)")

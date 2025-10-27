@@ -4,7 +4,7 @@ import logging
 from typing import Any
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
-from poschodech_client.api import PoschodechApi
+from .poschodech_client.api import PoschodechApi
 from datetime import timedelta
 
 _LOGGER = logging.getLogger(__name__)
