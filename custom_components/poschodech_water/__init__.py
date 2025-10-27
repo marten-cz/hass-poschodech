@@ -15,7 +15,7 @@ from .coordinator import PoschodechCoordinator
 _LOGGER = logging.getLogger(__name__)
 
 
-async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+async def async_setup(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up the Poschodech Water integration from a config entry."""
 
     session = async_get_clientsession(hass)
@@ -54,10 +54,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     return True
 
 
-async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Unload the integration when removed from Home Assistant."""
-    unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
-    if unload_ok:
-        hass.data[DOMAIN].pop(entry.entry_id, None)
-        _LOGGER.info("Poschodech Water integration unloaded: %s", entry.entry_id)
-    return unload_ok
+# async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+#     """Unload the integration when removed from Home Assistant."""
+#     unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+#     if unload_ok:
+#         hass.data[DOMAIN].pop(entry.entry_id, None)
+#         _LOGGER.info("Poschodech Water integration unloaded: %s", entry.entry_id)
+#     return unload_ok
